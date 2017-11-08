@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.amiltonedev_lt030.iem_tp2_android.activity.MainActivity">
+
+
+    <!-- les id sont en première ligne -->
+    <!-- et on retrouve dans l'ordre : "nom du layout" > "type de l'objet" > "a quoi il sert" -->
+    <Button
+        android:id="@+id/detail_button_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_activity_button_heart_rate"/>
+
+    <!-- le namespace tools permet de mocker l'affichage -->
+    <!-- ici, avec tools:text, on affiche un text en preview qui ne sera pas visible au runtime -->
+    <TextView
+        android:id="@+id/detail_textview_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="~~"/>
+
+    <Button
+        android:id="@+id/detail_button_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_button_name"/>
+
+    <TextView
+        android:id="@+id/detail_textviexw_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Nom de l\'appareil"/>
+
+</LinearLayout>

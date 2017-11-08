@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">iem-tp2-android</string>
+
+    // GENERIC
+    <string name="connexion_status_paired">device paired</string>
+    <string name="connexion_status_none">no device paired</string>
+
+    <string name="heartrate_below_zero">probably dead</string>
+
+    // MAIN ACTIVITY
+    <string name="main_activity_button_connect">Connexion</string>
+    <string name="main_activity_button_detail">Détail</string>
+    <string name="main_activity_button_name">Nom de l\'appareil</string>
+    <string name="main_activity_button_name_device">Nom de l\'appareil</string>
+
+    // DETAIL ACTIVITY
+    <string name="detail_activity_button_heart_rate">Rythme cardiaque</string>
+
+</resources>
