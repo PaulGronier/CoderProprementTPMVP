@@ -17,6 +17,7 @@ import com.example.amiltonedev_lt030.iem_tp2_android.R;
 import com.example.amiltonedev_lt030.iem_tp2_android.model.Device;
 import com.example.amiltonedev_lt030.iem_tp2_android.model.DeviceMock;
 import com.example.amiltonedev_lt030.iem_tp2_android.manager.BLEManager;
+import com.example.amiltonedev_lt030.iem_tp2_android.util.ErrorDisplayerToastImpl;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonNameDevice;
     private TextView textViewStatus;
     private TextView textViewDeviceName;
+    private ErrorDisplayerToastImpl errorDisplayerToast;
 
     private BLEManager bleManager;
 
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        errorDisplayerToast = new ErrorDisplayerToastImpl(this);
 
         // découpage de l'initialisation en méthodes
         initializeInjection();
@@ -73,30 +76,9 @@ public class MainActivity extends AppCompatActivity {
             textViewDeviceName.setText(deviceName);
         }else{
             //textViewDeviceName.setText(getString(R.string.connexion_status_none));
+            errorDisplayerToast.displayError(getString(R.string.connexion_status_none));
 
 
-            AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
-            builder1.setMessage("Write your message here.");
-            builder1.setCancelable(true);
-
-            builder1.setPositiveButton(
-                    "Yes",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
-
-            builder1.setNegativeButton(
-                    "No",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
-
-            AlertDialog alert11 = builder1.create();
-            alert11.show();
         }
     }
 
